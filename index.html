@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Convite Especial</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+        <!-- Área da Logo -->
+        <header class="logo-area">
+            <!-- Substitua a imagem abaixo pela sua logo -->
+            <img src="./Logos Finare/FINAREPNG.png" alt="Sua Logo" class="logo" />
+            <!-- Ou use um nome estilizado ao invés de imagem -->
+            <!-- <h2 class="logo-text">Nome da sua marca</h2> -->
+          </header>
+  <main class="card">
+
+    <!-- Título do Convite -->
+    <h1>Convite Especial</h1>
+
+    <!-- Texto explicativo -->
+    <p class="invite-text">
+        Oi, Duda!<br><br>
+      
+        Quero te fazer um convite muito especial: <strong>quero te convidar para ser minha sócia na Finare</strong>, um projeto que estou construindo para ajudar as pessoas a organizarem suas finanças de forma simples, leve e acessível.<br><br>
+      
+        A Finare vai permitir que qualquer pessoa registre seus ganhos, controle seus gastos e crie metas financeiras. Além disso, estamos criando um espaço dedicado às famílias, onde até as crianças vão poder aprender sobre dinheiro de maneira divertida, com tarefas e recompensas.<br><br>
+      
+        Eu acredito de verdade que o projeto só tem a ganhar com você. Seu olhar criativo, sua inteligência e sua energia têm tudo a ver com o propósito da Finare. Por isso, quero que você não apenas participe — mas esteja comigo desde o início, construindo tudo isso como cofundadora.<br><br>
+      
+        Como sócia, você vai ajudar a pensar o produto, testar as funcionalidades, dar ideias de melhorias, opinar sobre os visuais e decidir comigo os próximos passos. Vai ser uma jornada leve, divertida e feita com muito propósito.<br><br>
+      
+        E como reconhecimento desde já, quero te oferecer <strong>R$70</strong> como um primeiro agradecimento simbólico por essa participação inicial. Mas o mais importante mesmo é que <strong>você fará parte disso comigo, de verdade</strong>.<br><br>
+      
+        Se você topar, vai ser uma honra enorme começar essa caminhada ao seu lado como a primeira sócia da Finare.<br><br>
+      
+        Vamos construir algo lindo juntos?<br><br>
+      
+        Com carinho,<br>
+        <strong>Theo Meduri</strong><br>
+        Fundador da Finare
+      </p>
+      
+      
+
+    <!-- Campo para o nome -->
+    <input type="text" id="nome" placeholder="Digite seu nome" />
+
+    <!-- Confirmação de leitura -->
+    <div class="checkbox-container">
+      <input type="checkbox" id="confirmacao" onclick="toggleButtonState()" />
+      <label for="confirmacao">Li e aceito participar</label>
+    </div>
+
+    <!-- Botão de aceitar -->
+    <button id="aceitarBtn" onclick="aceitarConvite()" disabled>Aceitar Convite</button>
+  </main>
+
+  <script>
+    function toggleButtonState() {
+      const checkbox = document.getElementById("confirmacao");
+      const button = document.getElementById("aceitarBtn");
+      button.disabled = !checkbox.checked;
+    }
+
+    function aceitarConvite() {
+      const nome = document.getElementById("nome").value.trim();
+      if (nome === "") {
+        alert("Por favor, digite seu nome.");
+        return;
+      }
+
+      const mensagem = `Oi, Theo! Aqui é ${nome}. Com muita alegria, aceito sua proposta! Estou super empolgada para embarcar nessa nova jornada ao seu lado. Que venham muitos aprendizados e conquistas juntos!`;
+      const numeroWhatsApp = "5511994458068";
+      const link = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+      window.open(link, "_blank");
+    }
+  </script>
+</body>
+</html>
